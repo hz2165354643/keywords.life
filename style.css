@@ -1,0 +1,197 @@
+/* 全局基础样式，采用苹果风格的浅色调和现代感字体 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'San Francisco', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+  background: #f7f7fa; /* 苹果风格浅灰背景 */
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部导航栏样式 */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 24px 32px 16px 32px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-bottom: 1px solid #ececec;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  background: url('https://img.icons8.com/ios-filled/50/000000/mac-os.png') no-repeat center/cover;
+  border-radius: 12px;
+  margin-right: 16px;
+}
+
+.site-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #222;
+}
+
+/* 主操作区容器，居中显示 */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px 0 16px;
+}
+
+/* 上传与压缩设置区域 */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 20px;
+}
+
+/* 上传按钮样式 */
+.upload-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #e0e5ec 0%, #f7f7fa 100%);
+  color: #007aff;
+  font-size: 1.1rem;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, box-shadow 0.2s;
+  border: none;
+  outline: none;
+  position: relative;
+}
+.upload-btn:hover {
+  background: #eaf1fb;
+  box-shadow: 0 4px 16px rgba(0,122,255,0.08);
+}
+
+/* 压缩比例滑块区域 */
+.slider-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+#qualityRange {
+  accent-color: #007aff; /* 苹果蓝 */
+  width: 160px;
+}
+#qualityValue {
+  min-width: 36px;
+  color: #007aff;
+  font-weight: bold;
+}
+
+/* 预览区布局，响应式两列 */
+.preview-section {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+/* 预览卡片样式 */
+.preview-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  padding: 24px 32px;
+  min-width: 260px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s;
+}
+.preview-card:hover {
+  box-shadow: 0 8px 32px rgba(0,122,255,0.10);
+}
+
+.preview-card h2 {
+  font-size: 1.1rem;
+  color: #007aff;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* 图片预览样式 */
+.preview-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background: #f0f0f3;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border: 1px solid #ececec;
+}
+
+/* 文件大小信息 */
+.file-info {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+/* 下载按钮样式 */
+.download-btn {
+  padding: 10px 28px;
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0,122,255,0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.download-btn:disabled {
+  background: #b0cfff;
+  cursor: not-allowed;
+}
+.download-btn:hover:not(:disabled) {
+  background: #005ecb;
+  box-shadow: 0 4px 16px rgba(0,122,255,0.18);
+}
+
+/* 底部说明 */
+.footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.95rem;
+  padding: 24px 8px 16px 8px;
+  background: transparent;
+  letter-spacing: 1px;
+}
+
+/* 响应式设计：手机端单列显示 */
+@media (max-width: 700px) {
+  .preview-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .container {
+    padding: 16px 4px 0 4px;
+  }
+  .preview-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 16px 8px;
+  }
+} 
